@@ -29,7 +29,7 @@ const Home = () => {
       >
         {people.map(person => (
           <Grid
-            rows={['small', 'flex']}
+            rows={['medium', 'flex']}
             columns={['small', 'xsmall']}
             areas={[
               { name: 'main', start: [0,0], end: [1,0] }

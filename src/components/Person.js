@@ -15,8 +15,8 @@ const Person = (props) => {
 
   return (
     <>
-      <Accordion background='light-2'>
-        <AccordionPanel header="Traits" >
+      <Accordion>
+        <AccordionPanel label="Traits" >
           <Box pad='medium'>
             <Text>{name}</Text>
             <Text>Gender: {gender}</Text>
@@ -24,8 +24,10 @@ const Person = (props) => {
             <Text>Eye Color: {eye_color}</Text>
           </Box>
         </AccordionPanel>
-        <AccordionPanel header="Homeworld">
-          
+        <AccordionPanel label="Homeworld">
+          <Text>{homeworldData.name}</Text>
+          <Text>Climate: {homeworldData.climate}</Text>
+          <Text>Terrain: {homeworldData.terrain}</Text>
         </AccordionPanel>
       </Accordion>
     </>
