@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Heading, Header, Box } from 'grommet'
+import { Heading, Header, Box, Grid, } from 'grommet'
 import Person from './Person'
 
 
@@ -21,19 +21,31 @@ const Home = () => {
       <Header>
         <Heading>Star Wars</Heading>
       </Header>
-      <Box 
-        pad='medium' 
-        direction='row-responsive' 
-        alignContent='between'
+      <Box
+        pad='medium'
         gap='medium'
+        wrap='true'
+        direction='row-responsive'
       >
         {people.map(person => (
-          <Box pad='small' >
-            <div key={person.url}>
-              <h1>{person.name}</h1>
-              <Person person={person} />
-            </div>
-          </Box>
+          <Grid
+            rows={['small', 'flex']}
+            columns={['small', 'xsmall']}
+            areas={[
+              { name: 'main', start: [0,0], end: [1,0] }
+            ]}
+          >
+            <Box 
+              gridArea='main' 
+              pad='small' 
+              direction='row-responsive'
+            >
+              <div key={person.url}>
+                <h1>{person.name}</h1>
+                <Person person={person} />
+              </div>
+            </Box>
+          </Grid>
         ))}
       </Box>
     </>
