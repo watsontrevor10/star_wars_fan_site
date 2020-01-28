@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Button, Box, AccordionPanel, Accordion, Text } from 'grommet'
+import { AccordionPanel, Accordion, Text } from 'grommet'
 
 const Person = (props) => {
   const [homeworldData, setHomeworldData] = useState({})
@@ -16,18 +16,19 @@ const Person = (props) => {
   return (
     <>
       <Accordion>
-        <AccordionPanel label="Traits" >
-          <Box pad='medium'>
-            <Text>{name}</Text>
-            <Text>Gender: {gender}</Text>
-            <Text>Height: {height}</Text>
-            <Text>Eye Color: {eye_color}</Text>
-          </Box>
+        <AccordionPanel label="Traits">
+          <Text>Gender: {gender}</Text>
+          <Text>Height: {height}</Text>
+          <Text>Eye Color: {eye_color}</Text>
+          <Text>Hair Color: {hair_color}</Text>
+          <Text>Birth Year: {birth_year}</Text>
         </AccordionPanel>
         <AccordionPanel label="Homeworld">
           <Text>{homeworldData.name}</Text>
           <Text>Climate: {homeworldData.climate}</Text>
           <Text>Terrain: {homeworldData.terrain}</Text>
+          <Text>Rotation Period: {homeworldData.rotation_period}</Text>
+          <Text>Orbital Period: {homeworldData.orbital_period}</Text>
         </AccordionPanel>
       </Accordion>
     </>

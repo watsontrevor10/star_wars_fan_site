@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <>
-      <Header>
+      <Header alignSelf='center'>
         <Heading>Star Wars</Heading>
       </Header>
       <Box
@@ -30,7 +30,7 @@ const Home = () => {
         {people.map(person => (
           <Grid
             rows={['medium', 'flex']}
-            columns={['small', 'xsmall']}
+            columns={['xsmall', 'small']}
             areas={[
               { name: 'main', start: [0,0], end: [1,0] }
             ]}
@@ -38,7 +38,6 @@ const Home = () => {
             <Box 
               gridArea='main' 
               pad='small' 
-              direction='row-responsive'
             >
               <div key={person.url}>
                 <h1>{person.name}</h1>
